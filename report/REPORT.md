@@ -5,7 +5,8 @@
 本專案採用 Linux/POSIX TCP client/server 架構。  
 伺服器預設監聽 `127.0.0.1:5050`，每次 `accept()` 成功後由父程序呼叫 `fork()`；  
 子程序處理單一連線後結束，父程序關閉該連線描述符並繼續接受新連線。  
-`SIGCHLD` handler 使用 `waitpid(..., WNOHANG)` 回收子程序，避免 zombie。listen backlog 設為 64；本機 100 client 的實際併發驗證由 `make test` 完成。  
+`SIGCHLD` handler 使用 `waitpid(..., WNOHANG)` 回收子程序，避免 zombie。  
+listen backlog 設為 64；本機 100 client 的實際併發驗證由 `make test` 完成。  
 
 應用層使用一行一個命令的純文字協定：`INFO`、`PING`、`HOLD 1..30`，每個回覆以 `OK` 或 `ERR` 開頭。`INFO` 取得 hostname、作業系統、核心版本、架構和 CPU 數。  
 `HOLD` 是可控的延遲命令，用於驗證多個子程序確實重疊執行，不是效能用途。  
