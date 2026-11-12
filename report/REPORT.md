@@ -86,7 +86,7 @@ make test
 | 2. 超長封包 | `PING` + 300 個 `x` + newline | 回覆 `ERR request too long` | 只讀固定緩衝區前段，錯誤地回覆 `OK PONG` |
 | 3. 命令尾隨垃圾 | `INFO garbage` | 回覆 `ERR invalid request` | 前綴比對通過，錯誤地回傳 system info |
 
-以上結果顯示 framing、長度上限、timeout 和完整命令驗證如何避免不完整或無效輸入被當成有效命令。
+以上結果顯示 framing、長度上限、timeout 和完整命令驗證如何避免不完整或無效輸入被當成有效命令。  
 Legacy 測試僅限本機 loopback。
 
 ## 6. 100 客戶端併發證明
