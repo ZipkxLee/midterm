@@ -1011,3 +1011,9 @@ echo "  ./build/client --verbose 127.0.0.1 5050 INFO"
 echo "  ./build/client 127.0.0.1 5050 PING"
 echo "  ./build/client 127.0.0.1 5050 'HOLD 3'"
 ```
+## 實作畫面
+
+<img width="796" height="506" alt="image" src="https://github.com/user-attachments/assets/e36b92a3-775f-4990-9dd9-b148ac9ebe3e" />
+<img width="807" height="688" alt="image" src="https://github.com/user-attachments/assets/f982cf3a-e5a5-4299-8068-e8f773dc4503" />
+<img width="791" height="552" alt="image" src="https://github.com/user-attachments/assets/f22a4ee0-586f-4778-9915-686efc189c4e" />
+
