@@ -93,7 +93,8 @@ Legacy 測試僅限本機 loopback。
 ## 6. 100 客戶端併發證明
 
 `make test` 預設同時啟動 100 個 client，各自要求伺服器執行 `HOLD 3`。  
-本次實測 100/100 成功，牆鐘時間為 3.23 秒；若逐一處理則約需 300 秒。伺服器整場測試共記錄 109 筆 fork（包含基本命令與異常輸入測試）；併發區段列出 100 個不同的 worker PID。  
+本次實測 100/100 成功，牆鐘時間為 3.23 秒；若逐一處理則約需 300 秒。  
+伺服器整場測試共記錄 109 筆 fork（包含基本命令與異常輸入測試）；併發區段列出 100 個不同的 worker PID。  
 完整輸出見 `artifacts/concurrency-proof.txt`，每個 client 的回覆另存於 `artifacts/concurrent-client-*.txt`。  
 可用環境變數 `CLIENT_COUNT` 調整測試數量。  
 
