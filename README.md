@@ -1,6 +1,7 @@
 # Fork-per-client System Information Service
 
-以 C、POSIX TCP sockets 與 `fork()` 實作的 Linux/WSL client/server 課程專案。伺服器每接受一條連線就建立一個子程序，父程序回收結束的子程序；共用網路、日誌與參數工具放在 `libnetutil.so`，用戶端和伺服器都動態連結它。
+以 C、POSIX TCP sockets 與 `fork()` 實作的 Linux/WSL client/server 課程專案。  
+伺服器每接受一條連線就建立一個子程序，父程序回收結束的子程序；共用網路、日誌與參數工具放在 `libnetutil.so`，用戶端和伺服器都動態連結它。
 
 ## 建置與執行
 
@@ -18,17 +19,20 @@ make
 
 ## 兩層 Debug 控制
 
-編譯期控制 `DEBUG_BUILD`：`make clean && make DEBUG=1` 會編入 DEBUG 日誌，`make clean && make DEBUG=0` 則移除 DEBUG 日誌程式碼。執行期用 server/client 的 `--verbose` 開啟日誌；若編譯時 `DEBUG=0`，執行期參數不能重新啟用已移除的 DEBUG 訊息。INFO/WARN/ERROR 日誌不受此開關影響。
+編譯期控制 `DEBUG_BUILD`：`make clean && make DEBUG=1` 會編入 DEBUG 日誌，`make clean && make DEBUG=0` 則移除 DEBUG 日誌程式碼。  
+執行期用 server/client 的 `--verbose` 開啟日誌；若編譯時 `DEBUG=0`，執行期參數不能重新啟用已移除的 DEBUG 訊息。INFO/WARN/ERROR 日誌不受此開關影響。
 
 ## 健壯性與對照模式
 
-預設伺服器具備 newline framing、255-byte 請求上限、嚴格命令驗證、5 秒 socket I/O timeout、完整處理部分 send/EINTR、SIGPIPE 防護、SIGCHLD 回收，以及 fork/socket/bind 等錯誤處理。`--legacy-demo` 會刻意停用 framing、timeout 與嚴格驗證，只供本機課程示範，勿用於正式服務。
+預設伺服器具備 newline framing、255-byte 請求上限、嚴格命令驗證、5 秒 socket I/O timeout、完整處理部分 send/EINTR、SIGPIPE 防護、SIGCHLD 回收，以及 fork/socket/bind 等錯誤處理。  
+`--legacy-demo` 會刻意停用 framing、timeout 與嚴格驗證，只供本機課程示範，勿用於正式服務。
 
 ```sh
 make test
 ```
 
-測試會產生三種穩健性對照和 100 客戶端併發執行證據，存於 `artifacts/`。預設 100 個 `HOLD 3` 請求需在 15 秒內完成；逐一處理約需 300 秒。可用 `CLIENT_COUNT=20 make test` 指定其他併發數。
+測試會產生三種穩健性對照和 100 客戶端併發執行證據，存於 `artifacts/`。預設 100 個 `HOLD 3` 請求需在 15 秒內完成；逐一處理約需 300 秒。  
+可用 `CLIENT_COUNT=20 make test` 指定其他併發數。
 
 ### 手動執行三種對照案例
 
@@ -79,7 +83,8 @@ PY
 ./build/client 127.0.0.1 25051 "INFO garbage"
 ```
 
-預期正常模式回覆 `ERR invalid request`；Legacy 模式以前綴比對命中 `INFO`，回傳系統資訊。測試完成後，在終端 1、2 各按一次 `Ctrl+C` 停止 server。也可以直接執行 `make test` 自動重跑這些案例並保存結果。
+預期正常模式回覆 `ERR invalid request`；Legacy 模式以前綴比對命中 `INFO`，回傳系統資訊。  
+測試完成後，在終端 1、2 各按一次 `Ctrl+C` 停止 server。也可以直接執行 `make test` 自動重跑這些案例並保存結果。
 
 ## 封包擷取
 
@@ -88,7 +93,8 @@ sudo apt update && sudo apt install tcpdump
 make capture
 ```
 
-腳本在 loopback 介面擷取 TCP 指定 port 的封包，產生 `artifacts/client-server.pcap`，並以 tcpdump 解碼輸出至 `artifacts/packet-analysis.txt`。協定內容是明文，可在封包中看到 `INFO` 與回覆；正式部署應加入 TLS。
+腳本在 loopback 介面擷取 TCP 指定 port 的封包，產生 `artifacts/client-server.pcap`，並以 tcpdump 解碼輸出至 `artifacts/packet-analysis.txt`。  
+協定內容是明文，可在封包中看到 `INFO` 與回覆；正式部署應加入 TLS。
 
 ## 專案內容
 
