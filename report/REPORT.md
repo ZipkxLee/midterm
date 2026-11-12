@@ -8,7 +8,8 @@
 `SIGCHLD` handler 使用 `waitpid(..., WNOHANG)` 回收子程序，避免 zombie。  
 listen backlog 設為 64；本機 100 client 的實際併發驗證由 `make test` 完成。  
 
-應用層使用一行一個命令的純文字協定：`INFO`、`PING`、`HOLD 1..30`，每個回覆以 `OK` 或 `ERR` 開頭。`INFO` 取得 hostname、作業系統、核心版本、架構和 CPU 數。  
+應用層使用一行一個命令的純文字協定：`INFO`、`PING`、`HOLD 1..30`，每個回覆以 `OK` 或 `ERR` 開頭。  
+`INFO` 取得 hostname、作業系統、核心版本、架構和 CPU 數。  
 `HOLD` 是可控的延遲命令，用於驗證多個子程序確實重疊執行，不是效能用途。  
 
 兩端共用的 logging、完整傳送、行接收、socket timeout、port 驗證封裝在 `libnetutil.so`。  
