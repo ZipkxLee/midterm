@@ -20,7 +20,8 @@ make
 ## 兩層 Debug 控制
 
 編譯期控制 `DEBUG_BUILD`：`make clean && make DEBUG=1` 會編入 DEBUG 日誌，`make clean && make DEBUG=0` 則移除 DEBUG 日誌程式碼。  
-執行期用 server/client 的 `--verbose` 開啟日誌；若編譯時 `DEBUG=0`，執行期參數不能重新啟用已移除的 DEBUG 訊息。INFO/WARN/ERROR 日誌不受此開關影響。
+執行期用 server/client 的 `--verbose` 開啟日誌；若編譯時 `DEBUG=0`，執行期參數不能重新啟用已移除的 DEBUG 訊息。  
+INFO/WARN/ERROR 日誌不受此開關影響。
 
 ## 健壯性與對照模式
 
