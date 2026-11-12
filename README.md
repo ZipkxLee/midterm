@@ -58,7 +58,7 @@ make test
 ./build/client --raw 127.0.0.1 25051 PING
 ```
 
-預期正常模式約 5 秒後回覆 `ERR request timed out`；Legacy 模式把一次 `recv()` 當成完整命令，回覆 `OK PONG`。
+預期正常模式約 5 秒後回覆 `ERR request timed out`；Legacy 模式把一次 `recv()` 當成完整命令，回覆 `OK PONG`。  
 
 #### 案例二：超長請求
 
