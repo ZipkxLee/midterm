@@ -64,7 +64,7 @@ make test
 
 `make test` 產生 `artifacts/robustness-examples.txt`、`artifacts/concurrency-proof.txt`、server log 及 100 個 client 回覆檔。以 `make clean && make DEBUG=0` 可驗證編譯期關閉 DEBUG。
 
-## 5. 健壯性實驗（至少三例）
+## 5. 健壯性實驗
 
 執行 `make test` 會在兩個本機 port 啟動 robust server 與 `--legacy-demo` server，逐項送出同一個原始 TCP payload。實際輸出寫入 `artifacts/robustness-examples.txt`；下表描述預期觀察，提交前請以產生的 log 核對並附上終端截圖。
 
