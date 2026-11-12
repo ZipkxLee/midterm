@@ -118,7 +118,13 @@ tcpdump 統計 20 個封包寫入 pcap、40 個封包符合 filter、0 個封包
 
 截圖與 pcap 應由學生在自己的課堂電腦執行後保存；不可用預期輸出冒充實測截圖。  
 
-## 9. 完整原始碼附錄
+## 9. 實作畫面
+
+<img width="796" height="506" alt="image" src="https://github.com/user-attachments/assets/e36b92a3-775f-4990-9dd9-b148ac9ebe3e" />
+<img width="807" height="688" alt="image" src="https://github.com/user-attachments/assets/f982cf3a-e5a5-4299-8068-e8f773dc4503" />
+<img width="791" height="552" alt="image" src="https://github.com/user-attachments/assets/f22a4ee0-586f-4778-9915-686efc189c4e" />
+
+## 10. 完整原始碼附錄
 
 以下內容由提交時使用的原始檔逐一收錄；編譯與測試所需檔案均列於此。  
 為方便閱讀，程式碼區塊加入繁體中文解說註解；這些註解只存在於報告，不改動工作區中實際編譯的原始檔。  
@@ -1011,9 +1017,4 @@ echo "  ./build/client --verbose 127.0.0.1 5050 INFO"
 echo "  ./build/client 127.0.0.1 5050 PING"
 echo "  ./build/client 127.0.0.1 5050 'HOLD 3'"
 ```
-## 實作畫面
-
-<img width="796" height="506" alt="image" src="https://github.com/user-attachments/assets/e36b92a3-775f-4990-9dd9-b148ac9ebe3e" />
-<img width="807" height="688" alt="image" src="https://github.com/user-attachments/assets/f982cf3a-e5a5-4299-8068-e8f773dc4503" />
-<img width="791" height="552" alt="image" src="https://github.com/user-attachments/assets/f22a4ee0-586f-4778-9915-686efc189c4e" />
 
