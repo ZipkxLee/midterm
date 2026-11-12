@@ -1,0 +1,18 @@
+=== Basic client/server checks ===
+OK PONG
+OK host=AlvinLee os=Linux release=6.6.87.2-microsoft-standard-WSL2 arch=x86_64 cpus=4
+
+=== Three robustness comparisons ===
+1. Missing newline
+  robust: ERR request timed out
+  legacy: OK PONG
+2. Overlong frame
+  robust: ERR request too long (maximum 255 bytes)
+  legacy: OK PONG
+3. Trailing garbage
+  robust: ERR invalid request; use INFO, PING, or HOLD seconds
+  legacy: OK host=AlvinLee os=Linux release=6.6.87.2-microsoft-standard-WSL2 arch=x86_64 cpus=4
+Frame boundary
+  255-byte request: ERR invalid request; use INFO, PING, or HOLD seconds
+  256-byte request: ERR request too long (maximum 255 bytes)
+  EOF before newline: ERR incomplete request; newline required
