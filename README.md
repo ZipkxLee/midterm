@@ -85,7 +85,8 @@ PY
 ```
 
 預期正常模式回覆 `ERR invalid request`；Legacy 模式以前綴比對命中 `INFO`，回傳系統資訊。  
-測試完成後，在終端 1、2 各按一次 `Ctrl+C` 停止 server。也可以直接執行 `make test` 自動重跑這些案例並保存結果。
+測試完成後，在終端 1、2 各按一次 `Ctrl+C` 停止 server。  
+也可以直接執行 `make test` 自動重跑這些案例並保存結果。
 
 ## 封包擷取
 
