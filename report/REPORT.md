@@ -118,8 +118,8 @@ tcpdump 統計 20 個封包寫入 pcap、40 個封包符合 filter、0 個封包
 <img width="791" height="552" alt="image" src="https://github.com/user-attachments/assets/f22a4ee0-586f-4778-9915-686efc189c4e" />  
   
 - 截圖 B：`artifacts/concurrency-proof.txt` 的 100/100、總時間及 fork worker PID。    
-<img width="583" height="649" alt="image" src="https://github.com/user-attachments/assets/5811feeb-8c7e-451f-a652-a4bfe2de5046" />
 <img width="660" height="731" alt="image" src="https://github.com/user-attachments/assets/365bb8ee-bc8f-4c6a-9c3a-d214b0af2ad3" />
+<img width="583" height="649" alt="image" src="https://github.com/user-attachments/assets/5811feeb-8c7e-451f-a652-a4bfe2de5046" />
 <img width="738" height="571" alt="image" src="https://github.com/user-attachments/assets/6d27a6c9-f05f-436e-a9fe-d59fbfc65310" />  
   
 - 截圖 C：三組 robust/legacy 對照輸出。  
