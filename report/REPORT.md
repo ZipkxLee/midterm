@@ -110,17 +110,20 @@ tcpdump 統計 20 個封包寫入 pcap、40 個封包符合 filter、0 個封包
 
 ## 8. 截圖與影片提交清單
 
-  - 截圖 A：編譯成功、`INFO` 回覆與 server `--verbose` log。  
+- 截圖 A：編譯成功、`INFO` 回覆與 server `--verbose` log。  
 <img width="796" height="506" alt="image" src="https://github.com/user-attachments/assets/e36b92a3-775f-4990-9dd9-b148ac9ebe3e" />
 <img width="807" height="688" alt="image" src="https://github.com/user-attachments/assets/f982cf3a-e5a5-4299-8068-e8f773dc4503" />
 <img width="791" height="552" alt="image" src="https://github.com/user-attachments/assets/f22a4ee0-586f-4778-9915-686efc189c4e" />  
-  - 截圖 B：`artifacts/concurrency-proof.txt` 的 100/100、總時間及 fork worker PID。    
+  
+- 截圖 B：`artifacts/concurrency-proof.txt` 的 100/100、總時間及 fork worker PID。    
 <img width="583" height="649" alt="image" src="https://github.com/user-attachments/assets/5811feeb-8c7e-451f-a652-a4bfe2de5046" />
 <img width="660" height="731" alt="image" src="https://github.com/user-attachments/assets/365bb8ee-bc8f-4c6a-9c3a-d214b0af2ad3" />
 <img width="738" height="571" alt="image" src="https://github.com/user-attachments/assets/6d27a6c9-f05f-436e-a9fe-d59fbfc65310" />  
-  - 截圖 C：三組 robust/legacy 對照輸出。  
+  
+- 截圖 C：三組 robust/legacy 對照輸出。  
 <img width="804" height="554" alt="image" src="https://github.com/user-attachments/assets/f523bfa5-5f95-4a76-9d8a-a77545277883" />  
-  - 截圖 D：Wireshark 的 TCP handshake 與明文 INFO/OK 封包，或 tcpdump 解碼畫面。  
+
+- 截圖 D：Wireshark 的 TCP handshake 與明文 INFO/OK 封包，或 tcpdump 解碼畫面。  
 <img width="1906" height="339" alt="image" src="https://github.com/user-attachments/assets/fe79bcc0-72a9-4c53-a6bf-a823be77c529" />  
 
 ## 9. 完整原始碼附錄
